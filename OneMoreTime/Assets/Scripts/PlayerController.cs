@@ -40,6 +40,8 @@ public class PlayerController : MonoBehaviour
                 GameManager.tomouCafe = true;
                 GameManager.horaVomito = true;
                 controleVomito = true;
+                Destroy(GameObject.Find("AreaCafe"));
+                teclaE.gameObject.SetActive(false);
             }
         }
         Debug.Log(playerID);
@@ -124,6 +126,13 @@ public class PlayerController : MonoBehaviour
                 DialogController.dialogStart = true;
             }
 
+        }
+
+        if (other.gameObject.CompareTag("Vomito2"))
+        {
+            DialogController.dialogIndex = 3;
+            DialogController.dialogStart = true;
+            Destroy(other.gameObject);
         }
     }
     private void OnTriggerExit(Collider other)
