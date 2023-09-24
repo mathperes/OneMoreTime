@@ -27,9 +27,6 @@ public class TImerController : MonoBehaviour
             countdownText.gameObject.SetActive(true);
             TimerCountDown();
         }
-        
-        Debug.Log(countdownText);
-        Debug.Log(Time.timeScale);
     }
 
     void TimerCountDown()

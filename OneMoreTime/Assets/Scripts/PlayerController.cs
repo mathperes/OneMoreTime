@@ -7,24 +7,33 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody playerRb;
 
-    private float inputHorizontal;
-    private float inputVertical;
+    [SerializeField] private float inputHorizontal;
+    [SerializeField] private float inputVertical;
 
     public float speed;
     public float maxSpeed;
 
     public bool facingRight;
+    public static bool canMove;
 
     // Start is called before the first frame update
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
+        canMove = false;
     }
+    private void Update()
+    {
 
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
-        PlayerMoviment();
+        if (canMove)
+        {
+            PlayerMoviment();
+        }
+             
     }
 
     public void PlayerMoviment()
@@ -37,7 +46,9 @@ public class PlayerController : MonoBehaviour
         if (Mathf.Abs(playerRb.velocity.x) > maxSpeed)
         {
             playerRb.velocity = new Vector2(Mathf.Sign(playerRb.velocity.x) * maxSpeed, playerRb.velocity.y);
+            
         }
+        
 
         playerRb.AddForce(Vector3.forward * speed * inputVertical);
 
