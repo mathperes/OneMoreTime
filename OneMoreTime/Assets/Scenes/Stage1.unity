@@ -10144,7 +10144,7 @@ MonoBehaviour:
   semRoupaSprite: {fileID: 279185852}
   comRoupaSprite: {fileID: 633362471}
   somCaminhao: {fileID: 8300000, guid: 811715568aa22f149bc7984e0f4a4880, type: 3}
-  somVomitando: {fileID: 0}
+  somVomitando: {fileID: 8300000, guid: e129df6a8ae68d8418cfdca8aad53035, type: 3}
   mala: {fileID: 1443329205}
   chave: {fileID: 849289840}
   pensandoLixo: {fileID: 1992841492}
