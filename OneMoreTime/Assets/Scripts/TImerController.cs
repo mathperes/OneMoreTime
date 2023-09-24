@@ -9,14 +9,16 @@ public class TImerController : MonoBehaviour
     public TextMeshProUGUI countdownText;
 
     public float countTime = 0;
-    public float countdown = 15;
+    public static float countdown = 4;
 
-    private bool isVomiting = false;
+
+    public static bool cleanTimer = false;
+    public static bool isVomiting = false;
 
     // Start is called before the first frame update
     void Start()
     {
-          
+
     }
 
     // Update is called once per frame
@@ -26,6 +28,11 @@ public class TImerController : MonoBehaviour
         {
             countdownText.gameObject.SetActive(true);
             TimerCountDown();
+        }
+        if (cleanTimer)
+        {
+            countdownText.gameObject.SetActive(false);
+            cleanTimer = false;
         }
     }
 
