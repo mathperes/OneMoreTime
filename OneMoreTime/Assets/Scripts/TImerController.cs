@@ -27,7 +27,7 @@ public class TImerController : MonoBehaviour
         if (isVomiting)
         {
             countdownText.gameObject.SetActive(true);
-            TimerCountDown();
+            //TimerCountDown();
         }
         if (cleanTimer)
         {

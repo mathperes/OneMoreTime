@@ -18,6 +18,11 @@ public class PlayerController : MonoBehaviour
     public SpriteRenderer semRoupaSprite;
     public SpriteRenderer comRoupaSprite;
 
+    private AudioSource audioSouce;
+
+    public AudioClip somCaminhao;
+    public AudioClip somVomitando;
+
     public GameObject mala;
     public GameObject chave;
     public GameObject pensandoLixo;
@@ -42,6 +47,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSouce = GetComponent<AudioSource>();
         playerRb = GetComponent<Rigidbody>();
         canMove = false;
     }
@@ -125,9 +131,20 @@ public class PlayerController : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, facingRight ? 0 : 180);
     }
 
+    IEnumerator timerBalao()
+    {
+        
+        yield return new WaitForSeconds(3);
+        DialogController.dialogIndex = 10;
+        DialogController.dialogStart = true;
+
+        pensandoLixo.SetActive(true);
+
+    }
+
     IEnumerator timerFinal()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(7);
         finalAcabou = true;
     }
 
@@ -166,6 +183,7 @@ public class PlayerController : MonoBehaviour
         {
             DialogController.dialogIndex = 3;
             DialogController.dialogStart = true;
+            
             GameManager.lembroDaRoupa = true;
             Destroy(other.gameObject);
         }
@@ -175,8 +193,9 @@ public class PlayerController : MonoBehaviour
             vomito.SetActive(false);
             TImerController.isVomiting = false;
             Destroy(other.gameObject);
-            DialogController.dialogIndex = 6;
-            DialogController.dialogStart = true;
+            //DialogController.dialogIndex = 6;
+            //DialogController.dialogStart = true;
+            audioSouce.PlayOneShot(somVomitando);
             TImerController.cleanTimer = true;
         }
 
@@ -203,6 +222,7 @@ public class PlayerController : MonoBehaviour
             DialogController.dialogIndex = 8;
             DialogController.dialogStart = true;
             saida.SetActive(true);
+            audioSouce.PlayOneShot(somCaminhao);
             Destroy(other.gameObject);
         }
 
@@ -210,8 +230,9 @@ public class PlayerController : MonoBehaviour
         {
             DialogController.dialogIndex = 9;
             DialogController.dialogStart = true;
-            pensandoLixo.SetActive(true);
+            //pensandoLixo.SetActive(true);
             canMove = false;
+            StartCoroutine(timerBalao());
             StartCoroutine(timerFinal());
             
         }

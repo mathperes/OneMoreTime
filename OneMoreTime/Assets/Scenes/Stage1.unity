@@ -3403,7 +3403,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &482362892
 Transform:
   m_ObjectHideFlags: 0
@@ -8025,6 +8025,7 @@ MonoBehaviour:
   vomito: {fileID: 1643463799}
   semRoupaSprite: {fileID: 0}
   comRoupaSprite: {fileID: 0}
+  somCaminhao: {fileID: 0}
   mala: {fileID: 0}
   chave: {fileID: 0}
   pensandoLixo: {fileID: 0}
@@ -8442,7 +8443,8 @@ MonoBehaviour:
   - "Lembrei de deixar minha mala no escrit\xF3rio!"
   - Acho que acabei derrubando minhas chaves quando comecei a passar mal na sala.
   - Agora preciso correr para o trabalho!!
-  - "Onde est\xE1 meu sapato?"
+  - Esqueci meu sapato, tenho que acha-lo
+  - Merda... meu sapato!
   chatSpeed: 0.3
   canDialog: 1
   firstTutorial: 1
@@ -10025,6 +10027,7 @@ GameObject:
   - component: {fileID: 1603680711}
   - component: {fileID: 1603680715}
   - component: {fileID: 1603680716}
+  - component: {fileID: 1603680717}
   m_Layer: 0
   m_Name: Player Mundo 1
   m_TagString: Untagged
@@ -10112,7 +10115,7 @@ Transform:
   m_GameObject: {fileID: 1603680710}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: 8.79, y: 0.55, z: 22.68}
+  m_LocalPosition: {x: -19.17, y: 0.55, z: 22.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10138,6 +10141,7 @@ MonoBehaviour:
   vomito: {fileID: 1643463799}
   semRoupaSprite: {fileID: 279185852}
   comRoupaSprite: {fileID: 633362471}
+  somCaminhao: {fileID: 8300000, guid: 811715568aa22f149bc7984e0f4a4880, type: 3}
   mala: {fileID: 1443329205}
   chave: {fileID: 849289840}
   pensandoLixo: {fileID: 1992841492}
@@ -10178,6 +10182,102 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!82 &1603680717
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603680710}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1611993894
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ public class FinalTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timer = 24;   
+        timer = 15;   
     }
 
     // Update is called once per frame
