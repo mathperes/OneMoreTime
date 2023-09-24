@@ -9,6 +9,9 @@ TagManager:
   - Vomito
   - Vomito2
   - ChegouVomito
+  - Roupa
+  - Mala
+  - Chave
   layers:
   - Default
   - TransparentFX

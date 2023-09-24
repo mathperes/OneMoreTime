@@ -20,7 +20,7 @@ public class DialogController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        chatSpeed = 0.025f;
+        chatSpeed = 0.015f;
         dialogPanel.SetActive(false);
     }
 
