@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
 
     private Rigidbody playerRb;
+    public int playerID;
 
     public GameObject teclaE;
 
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
     [Header("Area booleanas")]
     public bool inCafe = false;
     public bool inVomit = false;
+    public static bool controleVomito = false;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +38,17 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 GameManager.tomouCafe = true;
+                GameManager.horaVomito = true;
+                controleVomito = true;
             }
+        }
+        Debug.Log(playerID);
+        if (GameManager.horaVomito && playerID == 1 && controleVomito)
+        {
+            
+            playerRb.position = new Vector3(79, 0.55f, 0);
+            controleVomito = false;
+
         }
     }
     // Update is called once per frame
@@ -46,7 +58,7 @@ public class PlayerController : MonoBehaviour
         {
             PlayerMoviment();
         }
-             
+
     }
 
     public void PlayerMoviment()
@@ -59,9 +71,9 @@ public class PlayerController : MonoBehaviour
         if (Mathf.Abs(playerRb.velocity.x) > maxSpeed)
         {
             playerRb.velocity = new Vector2(Mathf.Sign(playerRb.velocity.x) * maxSpeed, playerRb.velocity.y);
-            
+
         }
-        
+
 
         playerRb.AddForce(Vector3.forward * speed * inputVertical);
 
@@ -97,6 +109,22 @@ public class PlayerController : MonoBehaviour
             teclaE.gameObject.SetActive(true);
             inCafe = true;
         }
+
+        if (other.gameObject.CompareTag("Vomito"))
+        {
+            teclaE.gameObject.SetActive(true);
+            if (GameManager.tomouCafe == true)
+            {
+                DialogController.dialogIndex = 3;
+                DialogController.dialogStart = true;
+            }
+            else
+            {
+                DialogController.dialogIndex = 2;
+                DialogController.dialogStart = true;
+            }
+
+        }
     }
     private void OnTriggerExit(Collider other)
     {
@@ -105,8 +133,11 @@ public class PlayerController : MonoBehaviour
             teclaE.gameObject.SetActive(false);
             inCafe = false;
         }
+
+        if (other.gameObject.CompareTag("Vomito"))
+        {
+            teclaE.gameObject.SetActive(false);
+        }
+
     }
-
-    
-
 }

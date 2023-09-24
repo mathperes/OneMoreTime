@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject areaPreta;
     public static bool tomouCafe = false;
     public static bool horaVomito = false;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +36,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void ChangeView()
+    public void ChangeView()
     {
         if (playerMundo1.activeInHierarchy == true)
         {
@@ -52,9 +53,5 @@ public class GameManager : MonoBehaviour
             camera2.SetActive(false);
         }
     }
-
-    void Tutorial()
-    {
-
-    }
+    
 }

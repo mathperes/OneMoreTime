@@ -3470,8 +3470,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 8
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -3742,7 +3742,7 @@ Transform:
   m_GameObject: {fileID: 1291233080}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: -0.3, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3788,6 +3788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d7a34f283e168447a7b1fcb1d9b50fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerID: 1
   teclaE: {fileID: 0}
   inputHorizontal: 0
   inputVertical: 0
@@ -4162,6 +4163,9 @@ MonoBehaviour:
   dialogContent:
   - "Droga, n\xE3o lembro de nada de ontem a noite, preciso botar minha roupa."
   - "Preciso de um caf\xE9 para me lembrar de ontem."
+  - "Depois do caf\xE9 eu limpo isso."
+  - Parece que eu acabei me passando ontem, agora preciso me lembrar como que fiz
+    isso.
   chatSpeed: 0.3
   canDialog: 1
   firstTutorial: 1
@@ -4726,7 +4730,7 @@ Transform:
   m_GameObject: {fileID: 1603680710}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: 12, y: 0.55, z: 22.71}
+  m_LocalPosition: {x: 14.7, y: 0.55, z: 22.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4745,6 +4749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d7a34f283e168447a7b1fcb1d9b50fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerID: 0
   teclaE: {fileID: 452427}
   inputHorizontal: 0
   inputVertical: 0
