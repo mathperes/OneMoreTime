@@ -6,12 +6,16 @@ using UnityEngine;
 public class DialogController : MonoBehaviour
 {
     public GameObject dialogPanel;
+    public GameObject tutorialPanel;
     public TextMeshProUGUI dialogText;
     public string[] dialogContent;
-    public int dialogIndex = 0;
+    public static int dialogIndex = 0;
     public float chatSpeed;
 
     public bool canDialog = true;
+    public bool firstTutorial = true;
+    public static bool dialogStart = false;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -30,25 +34,36 @@ public class DialogController : MonoBehaviour
             StartDialog();
         }
 
+        if(dialogStart)
+        {
+            dialogStart = false;
+            StartDialog();
+        }
+
         if (Input.GetKeyUp(KeyCode.Space))
         {
             CleanDialog();
         }
+
+        if (firstTutorial)
+        {
+            TutorialText();
+        }
     }
 
-    IEnumerator ShowDialog()
+    IEnumerator ShowDialog(int index)
     {
-        foreach (var letter in dialogContent[dialogIndex])
+        foreach (var letter in dialogContent[index])
         {
             dialogText.text += letter;
             yield return new WaitForSeconds(chatSpeed);
         }        
     }
 
-    void StartDialog()
+    public void StartDialog()
     {
         dialogPanel.SetActive(true);
-        StartCoroutine(ShowDialog());        
+        StartCoroutine(ShowDialog(dialogIndex));        
     }
 
     void CleanDialog()
@@ -56,5 +71,15 @@ public class DialogController : MonoBehaviour
         dialogText.text = "";
         dialogPanel.SetActive(false);
         PlayerController.canMove = true;
+    }
+
+    void TutorialText()
+    {
+        tutorialPanel.SetActive(true);
+    }
+
+    public void CloseTutorial()
+    {
+        firstTutorial = false;
     }
 }

@@ -11,6 +11,10 @@ public class GameManager : MonoBehaviour
     public GameObject camera1;
     public GameObject camera2;
 
+    public GameObject areaPreta;
+    public static bool tomouCafe = false;
+    public static bool horaVomito = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +27,11 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             ChangeView();
+        }
+
+        if (tomouCafe)
+        {
+            areaPreta.gameObject.SetActive(false);
         }
     }
 
@@ -42,5 +51,10 @@ public class GameManager : MonoBehaviour
             playerMundo2.SetActive(false);
             camera2.SetActive(false);
         }
+    }
+
+    void Tutorial()
+    {
+
     }
 }

@@ -7,6 +7,9 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody playerRb;
 
+    public GameObject teclaE;
+
+
     [SerializeField] private float inputHorizontal;
     [SerializeField] private float inputVertical;
 
@@ -16,6 +19,10 @@ public class PlayerController : MonoBehaviour
     public bool facingRight;
     public static bool canMove;
 
+    [Header("Area booleanas")]
+    public bool inCafe = false;
+    public bool inVomit = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +31,13 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-
+        if (inCafe)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                GameManager.tomouCafe = true;
+            }
+        }
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -69,5 +82,31 @@ public class PlayerController : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0, 0, facingRight ? 0 : 180);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("PrimeiraLembranca"))
+        {
+            DialogController.dialogIndex = 1;
+            DialogController.dialogStart = true;
+            Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.CompareTag("Cafe"))
+        {
+            teclaE.gameObject.SetActive(true);
+            inCafe = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Cafe"))
+        {
+            teclaE.gameObject.SetActive(false);
+            inCafe = false;
+        }
+    }
+
+    
 
 }
