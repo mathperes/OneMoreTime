@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     [Header("Area booleanas")]
     public bool inCafe = false;
     public bool inVomit = false;
+    public bool comRoupa = false;
     public static bool controleVomito = false;
 
     // Start is called before the first frame update
@@ -158,6 +159,11 @@ public class PlayerController : MonoBehaviour
             DialogController.dialogIndex = 6;
             DialogController.dialogStart = true;
             TImerController.cleanTimer = true;
+        }
+
+        if (other.gameObject.CompareTag("Roupa"))
+        {
+
         }
     }
 
