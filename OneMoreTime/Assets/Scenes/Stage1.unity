@@ -2438,7 +2438,7 @@ Transform:
   m_GameObject: {fileID: 342864072}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -26.16, y: 0.24, z: -4.17}
+  m_LocalPosition: {x: -24.1, y: 0.24, z: -4.17}
   m_LocalScale: {x: 4.46, y: 4.46, z: 4.46}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2506,7 +2506,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1109239524, guid: eb1388e7799e7ff42a35bef52c658191, type: 3}
+  m_Sprite: {fileID: 1014012824, guid: 6f6215a4d255f8942be24a17070fdf71, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4297,7 +4297,7 @@ Animator:
   m_GameObject: {fileID: 633362467}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 561ead26c756b2148acf2c2f55b9d921, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9e45da2c0d071334d846fb96dd036541, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4349,7 +4349,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 708207723, guid: c90727ea54fc8b841bb25e5b94ba55bd, type: 3}
+  m_Sprite: {fileID: -1586252490, guid: 15ce772db140f3542accdd8a7c764fab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8037,6 +8037,7 @@ MonoBehaviour:
   inCafe: 0
   inVomit: 0
   comRoupa: 0
+  finalAcabou: 0
 --- !u!65 &1291233084
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10135,8 +10136,8 @@ MonoBehaviour:
   teclaE: {fileID: 452427}
   miniGamePanel: {fileID: 1146760923}
   vomito: {fileID: 1643463799}
-  semRoupaSprite: {fileID: 0}
-  comRoupaSprite: {fileID: 0}
+  semRoupaSprite: {fileID: 279185852}
+  comRoupaSprite: {fileID: 633362471}
   mala: {fileID: 1443329205}
   chave: {fileID: 849289840}
   pensandoLixo: {fileID: 1992841492}
@@ -10149,6 +10150,7 @@ MonoBehaviour:
   inCafe: 0
   inVomit: 0
   comRoupa: 0
+  finalAcabou: 0
 --- !u!54 &1603680716
 Rigidbody:
   m_ObjectHideFlags: 0

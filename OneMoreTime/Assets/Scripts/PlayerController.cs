@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -74,6 +76,11 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.StartMiniGame = true;
         }*/
+
+        if (finalAcabou)
+        {
+            SceneManager.LoadScene("Final1");
+        }
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -177,6 +184,8 @@ public class PlayerController : MonoBehaviour
         {
             DialogController.dialogIndex = 6;
             DialogController.dialogStart = true;
+            semRoupaSprite.gameObject.SetActive(false);
+            comRoupaSprite.gameObject.SetActive(true);
             mala.SetActive(true);
             Destroy(other.gameObject);
         }
@@ -204,6 +213,7 @@ public class PlayerController : MonoBehaviour
             pensandoLixo.SetActive(true);
             canMove = false;
             StartCoroutine(timerFinal());
+            
         }
     }
 
