@@ -12,6 +12,7 @@ TagManager:
   - Roupa
   - Mala
   - Chave
+  - Saida
   layers:
   - Default
   - TransparentFX
