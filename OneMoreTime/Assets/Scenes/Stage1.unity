@@ -8026,6 +8026,7 @@ MonoBehaviour:
   semRoupaSprite: {fileID: 0}
   comRoupaSprite: {fileID: 0}
   somCaminhao: {fileID: 0}
+  somVomitando: {fileID: 0}
   mala: {fileID: 0}
   chave: {fileID: 0}
   pensandoLixo: {fileID: 0}
@@ -8433,18 +8434,19 @@ MonoBehaviour:
   tutorialPanel: {fileID: 1382266075}
   dialogText: {fileID: 424050313}
   dialogContent:
-  - "Droga, n\xE3o lembro de nada de ontem a noite, preciso botar minha roupa."
-  - "Preciso de um caf\xE9 para me lembrar de ontem."
+  - "Droga, n\xE3o lembro de nada de ontem a noite, preciso botar minha roupa. Onde
+    que ela est\xE1??"
+  - "Preciso de um caf\xE9 para me lembrar do que aconteceu ontem."
   - Tenho que lembrar como que fiz isso.
-  - "Ent\xE3o minhas roupas est\xE3o no banheiro, mas eu n\xE3o consegui chegar a
-    tempo na privada pelo que parece, tenho que ir at\xE9 o banheiro."
-  - "Droga, n\xE3o estou me sentindo bem, preciso correr para o banheiro."
+  - "Minhas roupas est\xE3o no banheiro, mas eu n\xE3o consegui chegar a tempo na
+    privada, tenho que ir at\xE9 o banheiro."
+  - "Droga, n\xE3o estou me sentindo bem, preciso vomitar na privada."
   - "Primeiro tenho que lembrar onde est\xE3o minhas roupas."
-  - "Lembrei de deixar minha mala no escrit\xF3rio!"
-  - Acho que acabei derrubando minhas chaves quando comecei a passar mal na sala.
+  - "Lembrei, minha mala est\xE1 no escrit\xF3rio!"
+  - "Falta s\xF3 a minha chave! Derrubei elas na sala!"
   - Agora preciso correr para o trabalho!!
-  - Esqueci meu sapato, tenho que acha-lo
-  - Merda... meu sapato!
+  - Esqueci meu sapato, tenho que acha-lo..
+  - "Merda... sapato... caminh\xE1o de lixo!"
   chatSpeed: 0.3
   canDialog: 1
   firstTutorial: 1
@@ -10142,6 +10144,7 @@ MonoBehaviour:
   semRoupaSprite: {fileID: 279185852}
   comRoupaSprite: {fileID: 633362471}
   somCaminhao: {fileID: 8300000, guid: 811715568aa22f149bc7984e0f4a4880, type: 3}
+  somVomitando: {fileID: 0}
   mala: {fileID: 1443329205}
   chave: {fileID: 849289840}
   pensandoLixo: {fileID: 1992841492}
