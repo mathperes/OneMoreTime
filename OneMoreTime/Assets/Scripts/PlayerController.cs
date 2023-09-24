@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     public int playerID;
 
     public GameObject teclaE;
+    public GameObject miniGamePanel;
+
+    public GameObject vomito;
 
 
     [SerializeField] private float inputHorizontal;
@@ -47,20 +50,29 @@ public class PlayerController : MonoBehaviour
         Debug.Log(playerID);
         if (GameManager.horaVomito && playerID == 1 && controleVomito)
         {
-            
+
             playerRb.position = new Vector3(79, 0.55f, 0);
             controleVomito = false;
 
         }
+
+        if (GameManager.StartMiniGame)
+        {
+            canMove = false;
+        }
+
+        /*if (TImerController.countdown <= 0)
+        {
+            GameManager.StartMiniGame = true;
+        }*/
     }
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (canMove)
+        if (canMove /*&& GameManager.canMove*/)
         {
             PlayerMoviment();
         }
-
     }
 
     public void PlayerMoviment()
@@ -97,6 +109,8 @@ public class PlayerController : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, facingRight ? 0 : 180);
     }
 
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("PrimeiraLembranca"))
@@ -132,9 +146,22 @@ public class PlayerController : MonoBehaviour
         {
             DialogController.dialogIndex = 3;
             DialogController.dialogStart = true;
+            GameManager.lembroDaRoupa = true;
             Destroy(other.gameObject);
         }
+
+        if (other.gameObject.CompareTag("ChegouVomito"))
+        {
+            vomito.SetActive(false);
+            TImerController.isVomiting = false;
+            Destroy(other.gameObject);
+            DialogController.dialogIndex = 6;
+            DialogController.dialogStart = true;
+            TImerController.cleanTimer = true;
+        }
     }
+
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Cafe"))
@@ -147,6 +174,30 @@ public class PlayerController : MonoBehaviour
         {
             teclaE.gameObject.SetActive(false);
         }
+
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.gameObject.CompareTag("Vomito") && GameManager.tomouCafe && GameManager.lembroDaRoupa)
+        {
+            GameManager.StartMiniGame = true;
+            //playerRb.position = new Vector3(125, 0.55f, -10);
+            DialogController.dialogIndex = 4;
+            DialogController.dialogStart = true;
+        }
+        if (collision.gameObject.CompareTag("Vomito") && GameManager.tomouCafe && !GameManager.lembroDaRoupa)
+        {
+            DialogController.dialogIndex = 5;
+            DialogController.dialogStart = true;
+        }
+        if (collision.gameObject.CompareTag("Vomito") && !GameManager.tomouCafe && !GameManager.lembroDaRoupa)
+        {
+            DialogController.dialogIndex = 1;
+            DialogController.dialogStart = true;
+        }
+
 
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class DialogController : MonoBehaviour
 {
     public GameObject dialogPanel;
-    public GameObject tutorialPanel;
+    public GameObject tutorialPanel;    
     public TextMeshProUGUI dialogText;
     public string[] dialogContent;
     public static int dialogIndex = 0;
@@ -49,6 +49,8 @@ public class DialogController : MonoBehaviour
         {
             TutorialText();
         }
+
+
     }
 
     IEnumerator ShowDialog(int index)
