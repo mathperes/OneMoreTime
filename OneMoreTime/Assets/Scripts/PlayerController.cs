@@ -13,7 +13,13 @@ public class PlayerController : MonoBehaviour
 
     public GameObject vomito;
 
+    public SpriteRenderer semRoupaSprite;
+    public SpriteRenderer comRoupaSprite;
 
+    public GameObject mala;
+    public GameObject chave;
+    public GameObject pensandoLixo;
+    
     [SerializeField] private float inputHorizontal;
     [SerializeField] private float inputVertical;
 
@@ -163,7 +169,23 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("Roupa"))
         {
+            DialogController.dialogIndex = 6;
+            DialogController.dialogStart = true;
+            Destroy(other.gameObject);
+        }
 
+        if (other.gameObject.CompareTag("Mala"))
+        {
+            DialogController.dialogIndex = 7;
+            DialogController.dialogStart = true;
+            Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.CompareTag("Chave"))
+        {
+            DialogController.dialogIndex = 8;
+            DialogController.dialogStart = true;
+            Destroy(other.gameObject);
         }
     }
 
