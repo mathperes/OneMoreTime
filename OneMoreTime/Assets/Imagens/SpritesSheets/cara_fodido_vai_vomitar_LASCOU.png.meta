@@ -108,7 +108,49 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: cara_fodido_vai_vomitar_LASCOU_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 18
+        width: 52
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 993a6cf52be3b054d8c45a60b98acf5d
+      internalID: 200544341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cara_fodido_vai_vomitar_LASCOU_1
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 18
+        width: 52
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faa9747f9385a964cba04c17f711d2ed
+      internalID: 1556178985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +161,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cara_fodido_vai_vomitar_LASCOU_0: 200544341
+      cara_fodido_vai_vomitar_LASCOU_1: 1556178985
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

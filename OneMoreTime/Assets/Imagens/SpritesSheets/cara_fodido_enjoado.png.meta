@@ -108,7 +108,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: cara_fodido_enjoado_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 18
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b4af64f0bc53547b03335b77607271
+      internalID: -1379312981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cara_fodido_enjoado_1
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 18
+        width: 52
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d7f18ffcf339a445a96a0770a4ea20e
+      internalID: -181276551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cara_fodido_enjoado_2
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 18
+        width: 52
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 300b8c88148ded14e9cb4ae633c6677f
+      internalID: 207673923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cara_fodido_enjoado_3
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 18
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d43169e377eca324c93301f7c66f08a4
+      internalID: -1386318018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +203,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cara_fodido_enjoado_0: -1379312981
+      cara_fodido_enjoado_1: -181276551
+      cara_fodido_enjoado_2: 207673923
+      cara_fodido_enjoado_3: -1386318018
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
