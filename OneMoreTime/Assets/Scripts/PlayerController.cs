@@ -19,7 +19,8 @@ public class PlayerController : MonoBehaviour
     public GameObject mala;
     public GameObject chave;
     public GameObject pensandoLixo;
-    
+    public GameObject saida;
+
     [SerializeField] private float inputHorizontal;
     [SerializeField] private float inputVertical;
 
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
     public bool inVomit = false;
     public bool comRoupa = false;
     public static bool controleVomito = false;
+    public bool finalAcabou = false;
 
     // Start is called before the first frame update
     void Start()
@@ -116,7 +118,11 @@ public class PlayerController : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, facingRight ? 0 : 180);
     }
 
-
+    IEnumerator timerFinal()
+    {
+        yield return new WaitForSeconds(5);
+        finalAcabou = true;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -171,6 +177,7 @@ public class PlayerController : MonoBehaviour
         {
             DialogController.dialogIndex = 6;
             DialogController.dialogStart = true;
+            mala.SetActive(true);
             Destroy(other.gameObject);
         }
 
@@ -178,6 +185,7 @@ public class PlayerController : MonoBehaviour
         {
             DialogController.dialogIndex = 7;
             DialogController.dialogStart = true;
+            chave.SetActive(true);
             Destroy(other.gameObject);
         }
 
@@ -185,7 +193,17 @@ public class PlayerController : MonoBehaviour
         {
             DialogController.dialogIndex = 8;
             DialogController.dialogStart = true;
+            saida.SetActive(true);
             Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.CompareTag("Saida"))
+        {
+            DialogController.dialogIndex = 9;
+            DialogController.dialogStart = true;
+            pensandoLixo.SetActive(true);
+            canMove = false;
+            StartCoroutine(timerFinal());
         }
     }
 
