@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -85,7 +84,7 @@ public class PlayerController : MonoBehaviour
 
         if (finalAcabou)
         {
-            SceneManager.LoadScene("Final1");
+            SceneManager.LoadScene("Final2");
         }
     }
     // Update is called once per frame
