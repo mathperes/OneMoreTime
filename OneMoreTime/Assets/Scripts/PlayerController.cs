@@ -192,8 +192,8 @@ public class PlayerController : MonoBehaviour
             vomito.SetActive(false);
             TImerController.isVomiting = false;
             Destroy(other.gameObject);
-            //DialogController.dialogIndex = 6;
-            //DialogController.dialogStart = true;
+            DialogController.dialogIndex = 11;
+            DialogController.dialogStart = true;
             audioSouce.PlayOneShot(somVomitando);
             TImerController.cleanTimer = true;
         }
